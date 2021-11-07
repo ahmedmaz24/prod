@@ -1,0 +1,37 @@
+<template>
+<lightning-card title ="Audit">
+<template if:true={tableData}>
+<lightning-button  onclick={handleclick} value="Demo" label="E-mail" icon-name="utility:save"></lightning-button>
+<lightning-button  icon-name="utility:file" onclick ={pdfclick} variant="brand" label="PDF" title="Primary action"  class="slds-m-left_x-small"></lightning-button>
+<lightning-button icon-name="utility:clock" onclick ={historyclick} variant="brand" label="Hisotry" title="Primary action"  class="slds-m-left_x-small"></lightning-button>
+<lightning-button onclick ={undoclick} variant="brand" label="reverse" title="Primary action"  class="slds-m-left_x-small"></lightning-button>
+
+    
+        <lightning-button icon-name="utility:download" 
+                          label="Download as CSV" 
+                          title="Download CSV File"
+                          onclick={downloadCSVFile} variant="brand"
+                          class="slds-m-left_x-small"></lightning-button>
+    
+
+<lightning-combobox
+name="progress"
+label="Filter by "
+value={value}
+placeholder="Select Progress"
+options={options}
+onchange={handleChange}></lightning-combobox>
+
+
+
+
+
+<lightning-datatable
+data={tableData}
+columns={columns}
+key-field="Id"
+></lightning-datatable>
+</template>
+
+</lightning-card>  
+</template>
